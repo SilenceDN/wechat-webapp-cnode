@@ -52,5 +52,9 @@ Page({
   onReady:function(){
     // 页面渲染完成
   },
+  //获取下一页数据
+  loadMore:function(e){
+    console.log('load more');
+  }
 
 })

@@ -10,7 +10,7 @@
         <view class="{{currentTag == 'ask' ? 'topic-tab tab-current' : 'topic-tab'}}" id="ask" bindtap="onTapTag">问答</view>
         <view class="{{currentTag == 'job' ? 'topic-tab tab-current' : 'topic-tab'}}" id="job" bindtap="onTapTag">招聘</view>
     </view>
-
+    <scroll-view scroll-y="false" bindscrolltolower="loadMore">
     <block wx:for="{{topicList}}">
         <view class="posts-item" index="{{index}}" id="{{item.id}}" catchtap="redictDetail">
             <view class="posts-author">
@@ -33,4 +33,5 @@
             <view class="posts-info"></view>
         </view>
     </block>
+    </scroll-view>
 </view>
