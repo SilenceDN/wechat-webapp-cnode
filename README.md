@@ -8,3 +8,5 @@ a sample wechat webapp for cnode
 
 <img src="https://github.com/SilenceDN/wechat-webapp-cnode/blob/master/screenshot/20161009140603.png">
 
+<img src="https://github.com/SilenceDN/wechat-webapp-cnode/blob/master/screenshot/20161009140645.png">
+
