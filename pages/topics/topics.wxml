@@ -1,0 +1,36 @@
+<view class="topic-main">
+    <loading hidden="{{hidden}}">
+        加载中...
+    </loading>
+
+    <view class="header">
+        <view class="{{currentTag == 'all' ? 'topic-tab tab-current' : 'topic-tab'}}" id="all" bindtap="onTapTag">全部</view>
+        <view class="{{currentTag == 'good' ? 'topic-tab tab-current' : 'topic-tab'}}" id="good" bindtap="onTapTag">精华</view>
+        <view class="{{currentTag == 'share' ? 'topic-tab tab-current' : 'topic-tab'}}" id="share" bindtap="onTapTag">分享</view>
+        <view class="{{currentTag == 'ask' ? 'topic-tab tab-current' : 'topic-tab'}}" id="ask" bindtap="onTapTag">问答</view>
+        <view class="{{currentTag == 'job' ? 'topic-tab tab-current' : 'topic-tab'}}" id="job" bindtap="onTapTag">招聘</view>
+    </view>
+
+    <block wx:for="{{topicList}}">
+        <view class="posts-item" index="{{index}}" id="{{item.id}}" catchtap="redictDetail">
+            <view class="posts-author">
+                <image class="author-avatar" src="{{item.author.avatar_url}}"></image>
+            </view>
+            <view class="{{item.top||item.good ? 'posts-type-top' : 'posts-type-other'}}">
+                    <view wx:if="{{item.top === true || item.good === true}}">
+                        <text wx:if="{{item.top === true}}">置顶</text>
+                        <text wx:elif="{{item.good === true && item.top !=true}}">精华</text>
+                    </view>
+                    <view wx:else>
+                        <text wx:if="{{item.tab === 'share'}}">分享</text>
+                        <text wx:elif="{{item.tab === 'ask'}}">问答</text>
+                        <text wx:else="{{item.tab === 'job'}}">招聘</text>
+                    </view>
+            </view>
+            <view class="posts-title">
+                {{item.title}}
+            </view>
+            <view class="posts-info"></view>
+        </view>
+    </block>
+</view>

@@ -1,0 +1,30 @@
+.pageBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.hide-input{
+    display: none
+}
+
+.loginBtn{
+    align-self:flex-end;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.userinfo-avatar{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.user-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}

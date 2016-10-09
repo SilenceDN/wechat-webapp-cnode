@@ -1,0 +1,15 @@
+<view class="pageBody">
+    <toast hidden="{{loginToast.state}}" duration="1500" bindchange="hideToast">
+        {{loginToast.msg}}
+    </toast>
+    <view wx-if="{{isLogin}}" class="user-info">
+        <image class="userinfo-avatar" src="{{userData.avatar_url}}" background-size="cover"></image>
+        <text>{{userData.loginname}}</text>
+    </view>
+
+    <view class="{{isLogin ? 'hide-input':''}}">
+        <input type="text" bindinput="bindKeyInput" placeholder="请输入你CNode账号的AccessToken码" value="76f62748-0c05-4a5b-a29a-170596f2d881"></input>
+    </view>
+    <button wx-if="{{!isLogin}}" class="loginBtn" type="primary" size="default" hover-class="other-button-hover" catchtap="doLogin">点击登陆CNODE</button>
+    <button wx-if="{{isLogin}}" class="loginBtn" type="primary" size="default" hover-class="other-button-hover" catchtap="logout">退出当前账号</button>
+</view>
